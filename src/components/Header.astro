@@ -3,7 +3,10 @@ import SocialLinks from './SocialLinks.astro';
 ---
 
 <header>
-  <a href="/">Zhangjian He</a>
+  <a href="/">
+    <img src="/images/avatar.png" alt="" width="40" height="40" />
+    <span>Zhangjian He</span>
+  </a>
   <SocialLinks />
 </header>
 
@@ -19,11 +22,20 @@ import SocialLinks from './SocialLinks.astro';
   }
 
   a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     color: inherit;
     font-size: 21px;
     font-weight: 700;
     letter-spacing: -0.65px;
     text-decoration: none;
+  }
+
+  img {
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   a:focus-visible {
@@ -32,6 +44,13 @@ import SocialLinks from './SocialLinks.astro';
   }
 
   @media (max-width: 600px) {
-    a { font-size: 18px; }
+    a { gap: 8px; font-size: 18px; }
+    img { width: 32px; height: 32px; }
+  }
+
+  @media (max-width: 380px) {
+    header { padding-inline: 12px; }
+    a { gap: 6px; font-size: 16px; }
+    img { width: 28px; height: 28px; }
   }
 </style>
