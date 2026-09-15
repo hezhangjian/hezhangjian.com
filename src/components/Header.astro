@@ -1,11 +1,18 @@
+---
+import SocialLinks from './SocialLinks.astro';
+---
+
 <header>
   <a href="/">Zhangjian He</a>
+  <SocialLinks />
 </header>
 
 <style>
   header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 8px;
     min-height: 80px;
     padding: 0 clamp(20px, 4.5vw, 72px);
     border-bottom: 1px solid #e0e4ea;
@@ -22,5 +29,9 @@
   a:focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 4px;
+  }
+
+  @media (max-width: 600px) {
+    a { font-size: 18px; }
   }
 </style>
