@@ -1,12 +1,26 @@
 # AGENTS.md
 
+## Project Overview
+
+This repository contains hezhangjian.com, a personal website built with Astro and TypeScript, managed with pnpm.
+The site focuses on Blogs and Projects and currently builds as a static site.
+
+This repository is organized as:
+
+- `src/`: Website source code.
+    - `components/`: Reusable Astro components with their local styles and interactions.
+    - `pages/`: File-based routes.
+
+Generated directories such as `.astro/`, `dist/`, and `node_modules/` are not source code and should not be edited manually.
+
 ## Code Style
 
 - All code comments must be written in English.
 - Commit messages must follow [Conventional Commits](https://www.conventionalcommits.org/) specification:
-    - Format: `<type>(<scope>): <description>`
-    - Common types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`, `build`
-    - Example: `feat(core): add zip utilities for archive operations`
+    - Format: `<type>: <description>` or `<type>(<scope>): <description>`.
+    - Scope is optional; use it only when it identifies a meaningful module or area. Omit redundant repository-wide scopes such as `site`.
+    - Common types: `build`, `chore`, `docs`, `feat`, `fix`, `refactor`, `style`, `test`
+    - Example: `feat: add homepage header`
 - All commits must be signed-off using the `-s` flag (`git commit -s`).
 - When listing parallel items with no specific logical relationship, sort them alphabetically.
 
