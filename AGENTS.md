@@ -7,6 +7,7 @@ The site focuses on Blogs and Projects and currently builds as a static site.
 
 This repository is organized as:
 
+- `docs/`: Project documentation, including architecture and content.
 - `src/`: Website source code.
     - `components/`: Reusable Astro components with their local styles and interactions.
     - `pages/`: File-based routes.
