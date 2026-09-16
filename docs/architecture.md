@@ -7,3 +7,7 @@ Content and attachments are read from a locally synced OneDrive directory, witho
 The repository contains pages, components, styles, and content loading logic.
 
 See [Content](content.md) for the website's content sections.
+
+## Blog
+
+Article URLs use `/blog/link/`, with the required `link` slug taken from frontmatter. Slugs must be unique across published articles, regardless of publication date. Dates are displayed on article pages and used for sorting, but are not part of the URL.
