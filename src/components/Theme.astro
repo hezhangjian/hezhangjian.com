@@ -1,0 +1,64 @@
+<script is:inline>
+  (() => {
+    const storageKey = 'theme';
+    const normalize = (value) => ['dark', 'light'].includes(value) ? value : 'system';
+    const apply = (value) => {
+      const theme = normalize(value);
+      document.documentElement.dataset.theme = theme;
+      document.dispatchEvent(new CustomEvent('themechange', { detail: theme }));
+    };
+
+    let preference = 'system';
+    try {
+      preference = localStorage.getItem(storageKey);
+    } catch {
+      // System appearance remains available when storage is blocked.
+    }
+    apply(preference);
+
+    document.addEventListener('theme-preference', (event) => {
+      const theme = normalize(event.detail);
+      apply(theme);
+      try {
+        localStorage.setItem(storageKey, theme);
+      } catch {
+        // Keep the current page usable even when preferences cannot be saved.
+      }
+    });
+
+    window.addEventListener('storage', (event) => {
+      if (event.key === storageKey || event.key === null) apply(event.newValue);
+    });
+  })();
+</script>
+
+<style is:global>
+  :root {
+    color-scheme: light;
+    --color-background: #ffffff;
+    --color-border: #e0e4ea;
+    --color-hover: #f3f5f7;
+    --color-muted: #626974;
+    --color-text: #202733;
+  }
+
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --color-background: #14171c;
+    --color-border: #343b46;
+    --color-hover: #252b34;
+    --color-muted: #aab3c0;
+    --color-text: #edf0f5;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']):not([data-theme='dark']) {
+      color-scheme: dark;
+      --color-background: #14171c;
+      --color-border: #343b46;
+      --color-hover: #252b34;
+      --color-muted: #aab3c0;
+      --color-text: #edf0f5;
+    }
+  }
+</style>

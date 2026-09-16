@@ -1,5 +1,6 @@
 ---
 import SocialLinks from './SocialLinks.astro';
+import ThemeMenu from './ThemeMenu.astro';
 ---
 
 <header>
@@ -7,19 +8,29 @@ import SocialLinks from './SocialLinks.astro';
     <img src="/images/avatar.png" alt="" width="40" height="40" />
     <span>Zhangjian He</span>
   </a>
-  <SocialLinks />
+  <div class="actions">
+    <SocialLinks />
+    <span class="separator" aria-hidden="true"></span>
+    <ThemeMenu />
+  </div>
 </header>
 
 <style>
   header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
     min-height: 80px;
-    padding: 0 clamp(20px, 4.5vw, 72px);
-    border-bottom: 1px solid #e0e4ea;
+    padding: 12px clamp(20px, 4.5vw, 72px);
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--color-border);
   }
+
+  .actions { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+
+  .separator { width: 1px; height: 24px; flex-shrink: 0; background: var(--color-muted); opacity: 0.6; }
 
   a {
     display: inline-flex;
