@@ -1,13 +1,13 @@
 ---
 import Header from '../components/Header.astro';
 import Theme from '../components/Theme.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = 'Zhangjian He';
-const description = 'Personal website of Zhangjian He.';
+const description = 'Zhangjian He’s personal website — writing, projects, talks, and more.';
 ---
 
-<!doctype html>
-<html lang="en">
+<BaseLayout title={title} description={description}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,7 +21,7 @@ const description = 'Personal website of Zhangjian He.';
   <body>
     <Header />
   </body>
-</html>
+</BaseLayout>
 
 <style>
   :global(body) {
