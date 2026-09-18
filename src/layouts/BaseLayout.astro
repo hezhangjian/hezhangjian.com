@@ -1,4 +1,8 @@
 ---
+import Header from '../components/Header.astro';
+import Theme from '../components/Theme.astro';
+import '../styles/global.css';
+
 interface Props {
   title: string;
   description: string;
@@ -6,9 +10,28 @@ interface Props {
 }
 
 const { description, lang = 'en', title } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
 <html lang={lang}>
-  <slot/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <Theme />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" type="application/rss+xml" title="Zhangjian He — Blog" href="/rss.xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main id="main"><slot /></main>
+  </body>
 </html>
