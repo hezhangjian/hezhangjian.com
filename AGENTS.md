@@ -9,8 +9,8 @@ This repository is organized as:
 
 - `docs/`: Project documentation, including architecture and content.
 - `src/`: Website source code.
-    - `components/`: Reusable Astro components with their local styles and interactions.
-    - `pages/`: File-based routes.
+  - `components/`: Reusable Astro components with their local styles and interactions.
+  - `pages/`: File-based routes.
 
 Generated directories such as `.astro/`, `dist/`, and `node_modules/` are not source code and should not be edited manually.
 
@@ -18,10 +18,10 @@ Generated directories such as `.astro/`, `dist/`, and `node_modules/` are not so
 
 - All code comments must be written in English.
 - Commit messages must follow [Conventional Commits](https://www.conventionalcommits.org/) specification:
-    - Format: `<type>: <description>` or `<type>(<scope>): <description>`.
-    - Scope is optional; use it only when it identifies a meaningful module or area. Omit redundant repository-wide scopes such as `site`.
-    - Common types: `build`, `chore`, `docs`, `feat`, `fix`, `refactor`, `style`, `test`
-    - Example: `feat: add homepage header`
+  - Format: `<type>: <description>` or `<type>(<scope>): <description>`.
+  - Scope is optional; use it only when it identifies a meaningful module or area. Omit redundant repository-wide scopes such as `site`.
+  - Common types: `build`, `chore`, `docs`, `feat`, `fix`, `refactor`, `style`, `test`
+  - Example: `feat: add homepage header`
 - All commits must be signed-off using the `-s` flag (`git commit -s`).
 - When listing parallel items with no specific logical relationship, sort them alphabetically.
 

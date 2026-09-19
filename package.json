@@ -11,6 +11,8 @@
     "check": "astro check",
     "deploy": "pnpm run build && wrangler deploy",
     "dev": "astro dev",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
     "generate-types": "wrangler types",
     "preview": "pnpm run build && wrangler dev"
   },
@@ -27,6 +29,8 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@types/node": "^25.9.1",
+    "prettier": "3.9.8",
+    "prettier-plugin-astro": "1.0.1",
     "typescript": "^6.0.3",
     "wrangler": "^4.132.0"
   }

@@ -9,7 +9,7 @@ interface Props {
   lang?: string;
 }
 
-const { description, lang = 'en', title } = Astro.props;
+const {description, lang = 'en', title} = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -32,6 +32,8 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   </head>
   <body>
     <Header />
-    <main id="main"><slot /></main>
+    <main id="main">
+      <slot />
+    </main>
   </body>
 </html>

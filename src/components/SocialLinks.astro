@@ -24,29 +24,26 @@ const links = [
 ---
 
 <div class="links" role="group" aria-label="Contact and social links">
-  {links.map(({ href, label, path }) => {
+  {links.map(({href, label, path}) => {
     const accessibleLabel = href.startsWith('mailto:')
       ? `${label} (opens your email app or webmail)`
       : `${label} (opens in a new tab)`;
 
     return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={accessibleLabel}
-      title={accessibleLabel}
-    >
-      <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="currentColor">
-        <path d={path} />
-      </svg>
-    </a>
+      <a href={href} target="_blank" rel="noopener noreferrer" aria-label={accessibleLabel} title={accessibleLabel}>
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="19" height="19" fill="currentColor">
+          <path d={path} />
+        </svg>
+      </a>
     );
   })}
 </div>
 
 <style>
-  .links { display: flex; gap: 4px; }
+  .links {
+    display: flex;
+    gap: 4px;
+  }
   a {
     display: inline-flex;
     align-items: center;
@@ -56,10 +53,20 @@ const links = [
     border-radius: 6px;
     color: var(--color-muted);
   }
-  a:hover { background: var(--color-hover); color: var(--color-text); }
-  a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+  a:hover {
+    background: var(--color-hover);
+    color: var(--color-text);
+  }
+  a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
   @media (max-width: 600px) {
-    .links { gap: 0; }
-    a { width: 32px; }
+    .links {
+      gap: 0;
+    }
+    a {
+      width: 32px;
+    }
   }
 </style>

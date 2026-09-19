@@ -1,11 +1,11 @@
 <script is:inline>
   (() => {
     const storageKey = 'theme';
-    const normalize = (value) => ['dark', 'light'].includes(value) ? value : 'system';
+    const normalize = (value) => (['dark', 'light'].includes(value) ? value : 'system');
     const apply = (value) => {
       const theme = normalize(value);
       document.documentElement.dataset.theme = theme;
-      document.dispatchEvent(new CustomEvent('themechange', { detail: theme }));
+      document.dispatchEvent(new CustomEvent('themechange', {detail: theme}));
     };
 
     let preference = 'system';
