@@ -1,0 +1,4 @@
+Contact: mailto:hezhangjian97@gmail.com
+Expires: 2031-10-01T00:00:00Z
+Canonical: https://hezhangjian.com/.well-known/security.txt
+Preferred-Languages: en, zh
